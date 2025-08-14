@@ -87,11 +87,13 @@ class ProductResponse(BaseModel):
     weight: Optional[float]
     dimensions: Optional[str]
     image_urls: List[str]
-    status: ProductStatus
     tags: List[str]
+    status: Optional[ProductStatus] = None
     is_active: bool
     created_at: datetime
     updated_at: datetime
+
+    #status: ProductStatus
 
 class Config:
     populate_by_name = True  # 👈 habilita alias inverso

@@ -52,6 +52,7 @@ class ProductRepository(BaseRepository):
             }
             
             cursor = self.collection.find(query).limit(limit)
+            print(cursor)
             documents = await cursor.to_list(length=limit)
             
             for doc in documents:
